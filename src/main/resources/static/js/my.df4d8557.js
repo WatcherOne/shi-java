@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["my"],{"0c6f":function(n,t,e){"use strict";e.r(t);var r=e("f2bf");function c(n,t,e,c,u,a){return Object(r["y"])(),Object(r["j"])("div",null,"测试")}var u={data:function(){return{}}};u.render=c;t["default"]=u}}]);
+//# sourceMappingURL=my.df4d8557.js.map
