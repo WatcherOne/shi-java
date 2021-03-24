@@ -1,13 +1,18 @@
 package watchersys.demo.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import org.apache.ibatis.annotations.Mapper;
 import watchersys.demo.entity.User;
-
 import java.util.ArrayList;
 
 @Repository
 @Mapper
 public interface UserDao {
-    ArrayList<User> getUserDetail();
+
+    User login(@Param("params") User params);
+
+    User getUserInfoById(Integer id);
+
+    ArrayList<User> getUserList(@Param("params") User params);
 }

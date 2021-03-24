@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="watchersys.demo.dao.UserDao">
-    <select id="getUserDetail" resultType="watchersys.demo.entity.User">
-        SELECT
-            *
-        FROM
-            user
+    <select id="login" resultType="watchersys.demo.entity.User">
+        SELECT * FROM user WHERE username = #{params.username} AND password = #{params.password}
+    </select>
+    <select id="getUserInfoById" resultType="watchersys.demo.entity.User">
+        SELECT * FROM user WHERE userid = #{id}
+    </select>
+    <select id="getUserList" resultType="watchersys.demo.entity.User">
+        SELECT * FROM user
+        WHERE
+            userid != null
+            <if test="params.username">
+                AND username like CONCAT('%',#{params.username},'%')
+            </if>
+            <if test="params.nickname">
+                AND nickname like CONCAT('%',#{params.nickname},'%')
+            </if>
     </select>
 </mapper>

@@ -9,11 +9,13 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class User implements Serializable {
 
-    private Integer id;
+    private Integer userId;
 
-    private String name;
+    private String username;
+
+    private String nickname;
 
     private String password;
 
-    private String role;
+    private Integer roleId;
 }

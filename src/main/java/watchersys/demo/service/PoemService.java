@@ -4,6 +4,4 @@ import watchersys.demo.common.R;
 
 public interface PoemService {
     R tableList();
-
-    R test();
 }

@@ -26,10 +26,4 @@ public class PoemServiceImpl implements PoemService {
         lists.add(item);
         return R.success(lists).add("total", 100).add("page", 3);
     }
-
-    @Override
-    public R test() {
-        ArrayList<User> userList = userDao.getUserDetail();
-        return R.success(userList);
-    }
 }

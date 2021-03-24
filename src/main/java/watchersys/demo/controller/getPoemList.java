@@ -24,11 +24,4 @@ public class getPoemList {
     public R getList(){
         return poemService.tableList();
     }
-
-    @GetMapping(value = "/test")
-    public R test(){
-        return poemService.test();
-    }
-
-
 }
