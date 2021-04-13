@@ -2,20 +2,84 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "mybatis-3-mapper.dtd" >
 <mapper namespace="watchersys.demo.dao.UserDao">
     <select id="login" resultType="watchersys.demo.entity.User">
-        SELECT * FROM user WHERE username = #{params.username} AND password = #{params.password}
+        SELECT
+            userid,
+            username,
+            password,
+            nickname,
+            roleid,
+            icon,
+            sex,
+            status,
+            email,
+            iphone
+        FROM user
+        WHERE
+            username = #{params.username} AND password = #{params.password}
     </select>
     <select id="getUserInfoById" resultType="watchersys.demo.entity.User">
-        SELECT * FROM user WHERE userid = #{id}
+        SELECT
+            userid,
+            username,
+            password,
+            nickname,
+            roleid,
+            icon,
+            sex,
+            status,
+            email,
+            iphone
+        FROM user
+        WHERE userid = #{id}
     </select>
     <select id="getUserList" resultType="watchersys.demo.entity.User">
-        SELECT * FROM user
-        WHERE
-            userid != null
-            <if test="params.username">
-                AND username like CONCAT('%',#{params.username},'%')
+        SELECT
+            userid,
+            username,
+            password,
+            nickname,
+            roleid,
+            icon,
+            sex,
+            status,
+            email,
+            iphone
+        FROM user
+        <where>
+            <if test="params.username != null and params.username != ''">
+                 AND username LIKE CONCAT('%', #{params.username}, '%')
             </if>
-            <if test="params.nickname">
-                AND nickname like CONCAT('%',#{params.nickname},'%')
+            <if test="params.nickname != null and params.nickname != ''">
+                OR nickname LIKE CONCAT('%', #{params.nickname}, '%')
             </if>
+        </where>
     </select>
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="userId" parameterType="watchersys.demo.entity.User">
+    <!-- todo 判断某些字段为空时, 设默认值 -->
+        INSERT INTO user (username,
+                          password,
+                          nickname,
+                          roleid,
+                          sex,
+                          status)
+        VALUES (#{params.username},
+                #{params.password},
+                #{params.nickname},
+                #{params.roleId},
+                #{params.sex},
+                #{params.status})
+    </insert>
+    <update id="updateUser" useGeneratedKeys="true" keyProperty="userId" parameterType="watchersys.demo.entity.User">
+        UPDATE user
+        SET username = #{params.username},
+            password = #{params.password},
+            nickname = #{params.nickname},
+            roleid = #{params.roleId},
+            icon = #{params.icon},
+            sex = #{params.sex},
+            status = #{params.status},
+            email = #{params.email},
+            iphone = #{params.iphone}
+        WHERE userid = #{params.userId}
+    </update>
 </mapper>

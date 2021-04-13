@@ -6,12 +6,17 @@ import watchersys.demo.common.R;
 import watchersys.demo.entity.User;
 import watchersys.demo.service.UserService;
 
+import javax.annotation.Resource;
+
 @RestController
 @RequestMapping("api")
 public class UserController {
 
-    @Autowired
     UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping("/login")
     public R login(User params) {
@@ -26,5 +31,10 @@ public class UserController {
     @GetMapping("/getUserList")
     public R getUserList(User params) {
         return userService.getUserList(params);
+    }
+
+    @PostMapping("/changeUser")
+    public R addUser(@RequestBody User params) {
+        return userService.changeUser(params);
     }
 }

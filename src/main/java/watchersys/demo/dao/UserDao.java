@@ -15,4 +15,8 @@ public interface UserDao {
     User getUserInfoById(Integer id);
 
     ArrayList<User> getUserList(@Param("params") User params);
+
+    Integer addUser(@Param("params") User params);
+
+    Integer updateUser(@Param("params") User params);
 }

@@ -9,4 +9,6 @@ public interface UserService {
     R getUserInfoById(Integer id);
 
     R getUserList(User params);
+
+    R changeUser(User params);
 }

@@ -1,5 +1,6 @@
 package watchersys.demo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +8,7 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
+@TableName(value = "user")
 public class User implements Serializable {
 
     private Integer userId;
@@ -18,4 +20,14 @@ public class User implements Serializable {
     private String password;
 
     private Integer roleId;
+
+    private String icon;
+
+    private Integer sex;
+
+    private Integer status;
+
+    private String email;
+
+    private Integer iphone;
 }

@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["404"],{"8cdb":function(n,t,c){"use strict";c.r(t);var e=c("f2bf"),r={class:"container"},a=Object(e["l"])("div",null,"页面不存在哦！",-1);function i(n,t,c,i,u,d){return Object(e["y"])(),Object(e["j"])("div",r,[a])}var u={data:function(){return{}}};u.render=i;t["default"]=u}}]);
-//# sourceMappingURL=404.a0129ab0.js.map

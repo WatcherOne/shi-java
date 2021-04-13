@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["403"],{"00a5":function(n,t,e){"use strict";e.r(t);var c=e("f2bf"),r={class:"container"},a=Object(c["l"])("div",null,"你没有权限哦！",-1);function i(n,t,e,i,u,o){return Object(c["y"])(),Object(c["j"])("div",r,[a])}var u={data:function(){return{}}};u.render=i;t["default"]=u}}]);
-//# sourceMappingURL=403.b038cbd5.js.map

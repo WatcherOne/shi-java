@@ -1,20 +1,22 @@
 package watchersys.demo.service.impl;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import watchersys.demo.common.R;
 import watchersys.demo.dao.UserDao;
 import watchersys.demo.entity.User;
 import watchersys.demo.service.UserService;
 
-import java.util.ArrayList;
+import java.util.List;
 
-@Service
 /** 必须要这个注解,表示生成一个构造函数,否则报空指针异常 */
-@AllArgsConstructor
-public class UserServicelmpl implements UserService {
+@Service
+public class UserServiceImpl implements UserService {
 
-    private UserDao userDao;
+    private final UserDao userDao;
+
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
 
     @Override
     public R login(User params) {
@@ -34,7 +36,19 @@ public class UserServicelmpl implements UserService {
 
     @Override
     public R getUserList(User params) {
-        ArrayList<User> userList = userDao.getUserList(params);
+        List<User> userList = userDao.getUserList(params);
         return R.success(userList);
+    }
+
+    @Override
+    public R changeUser(User params) {
+        if (params.getUserId() != null) {
+            userDao.updateUser(params);
+        } else {
+            // 给性别默认值
+            userDao.addUser(params);
+        }
+        Integer userId = params.getUserId();
+        return R.success(userId);
     }
 }
