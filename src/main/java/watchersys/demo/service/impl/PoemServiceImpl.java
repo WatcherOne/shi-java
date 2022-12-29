@@ -1,14 +1,10 @@
 package watchersys.demo.service.impl;
 
-import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import watchersys.demo.common.R;
-import watchersys.demo.dao.UserDao;
-import watchersys.demo.entity.User;
+import watchersys.demo.mapper.UserDao;
 import watchersys.demo.service.PoemService;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;

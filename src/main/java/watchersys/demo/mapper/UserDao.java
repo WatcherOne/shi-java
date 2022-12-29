@@ -1,9 +1,9 @@
-package watchersys.demo.dao;
+package watchersys.demo.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import org.apache.ibatis.annotations.Mapper;
-import watchersys.demo.entity.User;
+import watchersys.demo.domain.entity.User;
 import java.util.ArrayList;
 
 @Repository

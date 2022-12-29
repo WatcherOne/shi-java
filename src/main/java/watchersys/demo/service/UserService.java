@@ -1,7 +1,7 @@
 package watchersys.demo.service;
 
 import watchersys.demo.common.R;
-import watchersys.demo.entity.User;
+import watchersys.demo.domain.entity.User;
 
 public interface UserService {
     R login(User params);

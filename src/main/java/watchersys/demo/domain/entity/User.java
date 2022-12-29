@@ -1,4 +1,4 @@
-package watchersys.demo.entity;
+package watchersys.demo.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;

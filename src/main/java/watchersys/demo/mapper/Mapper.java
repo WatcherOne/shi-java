@@ -1,4 +1,4 @@
-package watchersys.demo.dao;
+package watchersys.demo.mapper;
 
 import java.lang.annotation.*;
 

@@ -2,8 +2,8 @@ package watchersys.demo.service.impl;
 
 import org.springframework.stereotype.Service;
 import watchersys.demo.common.R;
-import watchersys.demo.dao.UserDao;
-import watchersys.demo.entity.User;
+import watchersys.demo.mapper.UserDao;
+import watchersys.demo.domain.entity.User;
 import watchersys.demo.service.UserService;
 
 import java.util.List;

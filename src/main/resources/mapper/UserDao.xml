@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Configuration 3.0//EN" "mybatis-3-mapper.dtd" >
-<mapper namespace="watchersys.demo.dao.UserDao">
-    <select id="login" resultType="watchersys.demo.entity.User">
+<mapper namespace="watchersys.demo.mapper.UserDao">
+    <select id="login" resultType="watchersys.demo.domain.entity.User">
         SELECT
             userid,
             username,
@@ -17,7 +17,7 @@
         WHERE
             username = #{params.username} AND password = #{params.password}
     </select>
-    <select id="getUserInfoById" resultType="watchersys.demo.entity.User">
+    <select id="getUserInfoById" resultType="watchersys.demo.domain.entity.User">
         SELECT
             userid,
             username,
@@ -32,7 +32,7 @@
         FROM user
         WHERE userid = #{id}
     </select>
-    <select id="getUserList" resultType="watchersys.demo.entity.User">
+    <select id="getUserList" resultType="watchersys.demo.domain.entity.User">
         SELECT
             userid,
             username,
@@ -54,7 +54,7 @@
             </if>
         </where>
     </select>
-    <insert id="addUser" useGeneratedKeys="true" keyProperty="userId" parameterType="watchersys.demo.entity.User">
+    <insert id="addUser" useGeneratedKeys="true" keyProperty="userId" parameterType="watchersys.demo.domain.entity.User">
     <!-- todo 判断某些字段为空时, 设默认值 -->
         INSERT INTO user (username,
                           password,
@@ -69,7 +69,7 @@
                 #{params.sex},
                 #{params.status})
     </insert>
-    <update id="updateUser" useGeneratedKeys="true" keyProperty="userId" parameterType="watchersys.demo.entity.User">
+    <update id="updateUser" useGeneratedKeys="true" keyProperty="userId" parameterType="watchersys.demo.domain.entity.User">
         UPDATE user
         SET username = #{params.username},
             password = #{params.password},
